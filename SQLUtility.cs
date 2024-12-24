@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace CPUFramework
 
         public static DataTable GetDataTable(string sqlstatement)
         {
+            Debug.Print(sqlstatement);
             DataTable dt = new();
             SqlConnection conn = new();
             conn.ConnectionString = ConnnectionString;
