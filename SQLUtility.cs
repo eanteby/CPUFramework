@@ -11,14 +11,14 @@ namespace CPUFramework
 {
     public class SQLUtility
     {
-        public static string ConnnectionString = "";
+        public static string ConnectionString = "";
 
         public static DataTable GetDataTable(string sqlstatement)
         {
             Debug.Print(sqlstatement);
             DataTable dt = new();
             SqlConnection conn = new();
-            conn.ConnectionString = ConnnectionString;
+            conn.ConnectionString = ConnectionString;
             conn.Open();
             //DisplayMessage("Conn Status", conn.State.ToString());
             var cmd = new SqlCommand();
