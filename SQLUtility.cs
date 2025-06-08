@@ -85,6 +85,10 @@ namespace CPUFramework
 						dt.Load(dr);
 					}
 				}
+				catch(InvalidDataException ex)
+				{
+					throw new Exception("lkkn");
+				}
 				catch (SqlException ex)
 				{
 					string msg = ParseConstraintMessage(ex.Message);
@@ -94,7 +98,6 @@ namespace CPUFramework
 				{
 					throw new Exception(cmd.CommandText + ": " + ex.Message, ex);
 				}
-
 			}
 			SetAllColumnProperties(dt);
 			return dt;
